@@ -36,7 +36,7 @@
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./dist/servicework.js')  // Ruta corregida
+        navigator.serviceWorker.register('./dist/servicework.js') // Ruta al archivo serviceworker.js
           .then(registration => {
             console.log('Service Worker registrado con éxito:', registration.scope);
           })
@@ -45,6 +45,6 @@
           });
       });
     }
-  </script>
+  </script>  
 </body>
 </html>

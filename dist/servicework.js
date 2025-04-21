@@ -1,70 +1,70 @@
-// Nombre de cache y versión
-const CACHE_NAME = 'pwaV1';
+// Nombre de la cache para la aplicación
+const CACHE_NAME = 'inkart-studio-cache-v1';
 
-// Archivos para el cacheo de la app se colocan en un array
-let urlCache = [
-    '../',
-    './css/styles.css',
-    './js/scripts,js',
-    './img/usuario.png'
+// Archivos a cachear
+const URLsToCache = [
+  '/',
+  '/index.html',
+  '/css/styles.css',
+  '/img/logo.png',
+  '/js/main.js',
+  '/dist/servicework.js',
+  '/contacto',
+  '/quienes',
+  '/galeria',
+  '/servicios'
 ];
 
-// Instalar la app con el evento install y va a guardar en cache urlCache
-self.addEventListener("install", (e) => {
-    e.waitUntil(
-        caches.open(CACHE_NAME)
-        .then(cache => {
-            return cache.addAll(urlCache)
-            .then(()=>{
-                self.skipWaiting();
-            });
-        })
-        .catch(err => {
-            console.error("No se ha registrado la cache" + err);
-        })
-    )
-});
-window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault();
-    const deferredPrompt = e;
-    const installBtn = document.getElementById('installBtn');
-    installBtn.style.display = 'block';
-  
-    installBtn.addEventListener('click', () => {
-      deferredPrompt.prompt();
-      deferredPrompt.userChoice.then((choiceResult) => {
-        if (choiceResult.outcome === 'accepted') {
-          console.log('App instalada');
-        } else {
-          console.log('Instalación cancelada');
-        }
-      });
-    });
-  });  
+// Instalación del service worker
+self.addEventListener('install', (event) => {
+  console.log('Service Worker: Instalando...');
 
-// Activar la app con el evento activate
-self.addEventListener("activate", event => {
-   async function deleteOldCaches() {
-    const names = await caches.keys();
-    await Promise.all(names.map(name =>{
-        if (name !== CACHE_NAME) {
-            return caches.delete(name);
-        }
-    }));
-   }
-   event.waitUntil(deleteOldCaches());
-   self.clients.claim(); 
+  // Cacheamos los archivos cuando se instala el service worker
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then((cache) => {
+        console.log('Service Worker: Archivos cacheados');
+        return cache.addAll(URLsToCache);
+      })
+  );
 });
 
-// Método fetch
-self.addEventListener("fetch", (e) => {
-    caches.match(e.request).then((r) => {
-        console.log("[Servicio Worker] Obteniendo recurso: " + e.request.url);
-        return (r || fetch(e.request).then((response) => {
-            return caches.open(CACHE_NAME).then((cache) => {
-                console.log("[Servicio Worker] Almacena el nuevo recurso: " + e.request.url);
-                cache.put(e.request, response.clone());
-            });
-        }));
-    });
+// Activación del service worker
+self.addEventListener('activate', (event) => {
+  console.log('Service Worker: Activado');
+
+  // Limpiar caches antiguas
+  event.waitUntil(
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cacheName) => {
+          if (cacheName !== CACHE_NAME) {
+            console.log('Service Worker: Cache antiguo eliminado', cacheName);
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+  );
+});
+
+// Manejo de las solicitudes fetch
+self.addEventListener('fetch', (event) => {
+  console.log('Service Worker: Fetching', event.request.url);
+
+  // Intentar obtener el recurso desde la cache o hacer una solicitud de red si no está en la cache
+  event.respondWith(
+    caches.match(event.request)
+      .then((cachedResponse) => {
+        // Si el recurso está en cache, retornamos la cache
+        if (cachedResponse) {
+          console.log('Service Worker: Recurso desde la cache', event.request.url);
+          return cachedResponse;
+        }
+
+        // Si no está en cache, se hace la solicitud a la red
+        console.log('Service Worker: Recurso no encontrado en la cache, obteniendo desde la red', event.request.url);
+        return fetch(event.request);
+      })
+  );
 });

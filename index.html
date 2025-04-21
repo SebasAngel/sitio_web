@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>InkArt Studio</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="icon" href="logo.png" type="img/png">
 </head>
 <body>
   <header class="header">
@@ -15,6 +15,7 @@
       <p>Sitio web para un estudio de tatuajes moderno.</p>
     </div>
     <nav class="nav">
+      <a href="#contacto" class="btn-main">Agendamiento de citas</a>
       <button class="btn-main">Agendamiento de citas</button>
       <ul class="menu">
         <li><a href="#quienes"> ¿Quiénes somos?</a></li>
@@ -32,7 +33,7 @@
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('serviceWork.js')
+        navigator.serviceWorker.register('servicework.js')
           .then(registration => {
             console.log('Service Worker registrado con éxito:', registration.scope);
           })

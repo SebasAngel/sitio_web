@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta name="theme-color" content="#000000" />
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="theme-color" content="#000000" />
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <link rel="manifest" href="./dist/manifest.json">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -18,12 +18,14 @@
       <img src="./img/logo.png" alt="InkArt Studio">
       <p>Sitio web para un estudio de tatuajes moderno.</p>
     </div>
+    <nav class="nav">
+      <ul class="menu">
         <li><a href="quienes" role="link">¿Quiénes somos?</a></li>
         <li><a href="galeria" role="link">Galería de trabajos</a></li>
         <li><a href="servicios" role="link">Servicios</a></li>
         <li><a href="contacto" role="link">Contacto</a></li>
-        <a href="contacto" class="btn-main">Agendamiento de citas</a>
       </ul>
+      <a href="contacto" class="btn-main">Agendamiento de citas</a>
     </nav>    
   </header>
 
@@ -32,18 +34,17 @@
   </footer>
 
   <script>
-   if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./dist/servicework.js')  // Ruta corregida
-      .then(registration => {
-        console.log('Service Worker registrado con éxito:', registration.scope);
-      })
-      .catch(error => {
-        console.error('Error al registrar el Service Worker:', error);
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./dist/servicework.js')  // Ruta corregida
+          .then(registration => {
+            console.log('Service Worker registrado con éxito:', registration.scope);
+          })
+          .catch(error => {
+            console.error('Error al registrar el Service Worker:', error);
+          });
       });
-  });
-}
+    }
   </script>
-
 </body>
 </html>

@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <link rel="manifest" href="manifest.json">
+  <link rel="manifest" href="./dist/manifest.json">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>InkArt Studio</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="logo.png" type="img/png">
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="icon" href="./img/logo.png" type="image/png">
 </head>
 <body>
   <header class="header">
     <div class="logo">
-      <img src="logo.png" alt="InkArt Studio">
+      <img src="./img/logo.png" alt="InkArt Studio">
       <p>Sitio web para un estudio de tatuajes moderno.</p>
     </div>
     <nav class="nav">
@@ -31,7 +31,7 @@
   </footer>
 
   <script>
-    if ('serviceWorker' in navigator) {
+    if ('serviceworker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('servicework.js')
           .then(registration => {

@@ -24,6 +24,23 @@ self.addEventListener("install", (e) => {
         })
     )
 });
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    const deferredPrompt = e;
+    const installBtn = document.getElementById('installBtn');
+    installBtn.style.display = 'block';
+  
+    installBtn.addEventListener('click', () => {
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('App instalada');
+        } else {
+          console.log('Instalación cancelada');
+        }
+      });
+    });
+  });  
 
 // Activar la app con el evento activate
 self.addEventListener("activate", event => {

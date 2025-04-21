@@ -35,17 +35,16 @@ header p {
 /* -------------------------------
    Logo para index.html
 -------------------------------- */
-.logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 2rem auto 1rem;
+.logo img {
+  width: 100px;
 }
 
-.logo img {
-  width: 60px;
-  max-width: 100%;
+@media (max-width: 768px) {
+  .logo img {
+    width: 80px;
+  }
 }
+
 
 /* -------------------------------
    Sección principal (index.html)
@@ -226,4 +225,16 @@ footer {
   .menu li {
     width: 100%;
   }
+}
+/* Estilo para la imagen en la parte inferior */
+.footer-image {
+  text-align: center; /* Centra la imagen */
+  margin-top: 2rem; /* Espacio superior para separarla del contenido anterior */
+}
+
+.footer-image img {
+  width: 100%; /* Ajusta el tamaño de la imagen al ancho del contenedor */
+  max-width: 400px; 
+  height: auto; 
+  border-radius: 10px; 
 }

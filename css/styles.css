@@ -1,129 +1,144 @@
-
 body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #d9f0f0;
-    color: #002c2c;
-  }
-  @media (max-width: 768px) {
-    .nav {
-      flex-direction: column; /* Colocar los elementos del menú en una columna */
-    }
-    .logo img {
-      width: 60px; /* Ajustar el tamaño del logo para pantallas más pequeñas */
-    }
-  }
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background-color: #0a3a3a;
-    color: #fff;
-  }
-  
-  .logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .logo img {
-    width: 80px;
-  }
-  
-  .logo p {
-    margin: 0.5rem 0 0;
-  }
-  
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #d9f0f0;
+  color: #002c2c;
+}
+
+@media (max-width: 768px) {
   .nav {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: column; /* Colocar los elementos del menú en una columna */
+    align-items: center; /* Centrar los elementos */
+    width: 100%; /* Asegurar que el menú ocupe el 100% del ancho */
   }
-  
-  .menu {
-    list-style: none;
-    padding: 0;
+
+  .logo img {
+    width: 60px; /* Ajustar el tamaño del logo para pantallas más pequeñas */
   }
-  
+
   .menu li {
-    margin: 0.5rem 0;
+    margin: 1rem 0; /* Aumentar el espacio entre los elementos del menú */
   }
-  
-  .menu a, .btn-main {
-    background-color: #e0f7f7;
-    border: none;
-    border-radius: 20px;
-    padding: 0.5rem 1rem;
-    color: #003c3c;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
-  }
-  
+
   .btn-main {
-    background-color: #003c3c;
-    color: white;
-    margin-bottom: 1rem;
-    cursor: pointer;
+    padding: 0.7rem 1.5rem; /* Aumentar el tamaño del botón */
+    font-size: 1.2rem; /* Hacer el texto más grande */
+    margin-bottom: 1rem; /* Añadir más espacio entre los botones */
+    width: 80%; /* Asegurar que el botón ocupe un poco más de espacio en móvil */
+    text-align: center; /* Centrar el texto del botón */
   }
-  
-  footer {
-    text-align: center;
-    margin-top: 3rem;
-    padding: 1rem;
-    font-size: 0.9rem;
-    color: #666;
+
+  .menu a {
+    padding: 0.7rem 1.5rem; /* Asegurar que los enlaces también tengan suficiente espacio */
+    font-size: 1.1rem;
+    margin: 0.5rem 0; /* Añadir espacio entre los enlaces */
+    width: 80%; /* Asegurar que los enlaces también ocupen el 80% del espacio */
+    text-align: center; /* Centrar los enlaces */
   }
-  
-  .formulario {
-    padding: 2rem;
-  }
-  
-  .formulario h2 {
-    background-color: #003c3c;
-    color: white;
-    padding: 0.5rem 1rem;
-    display: inline-block;
-    border-radius: 20px;
-    margin-bottom: 2rem;
-  }
-  
-  .form-container {
-    display: flex;
-    gap: 2rem;
-    align-items: flex-start;
-  }
-  
-  .form-images img {
-    max-width: 150px;
-    margin-bottom: 1rem;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    flex: 1;
-  }
-  
-  form label {
-    font-weight: bold;
-  }
-  
-  form input {
-    padding: 0.5rem;
-    border: none;
-    border-bottom: 2px solid #003c3c;
-    background: transparent;
-  }
-  .btn-main {
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn-main:hover {
-    background-color: #006666;
-  }
-  
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #0a3a3a;
+  color: #fff;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo img {
+  width: 80px;
+}
+
+.logo p {
+  margin: 0.5rem 0 0;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  margin: 0.5rem 0;
+}
+
+.menu a, .btn-main {
+  background-color: #e0f7f7;
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  color: #003c3c;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.btn-main {
+  background-color: #003c3c;
+  color: white;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.formulario {
+  padding: 2rem;
+}
+
+.formulario h2 {
+  background-color: #003c3c;
+  color: white;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+}
+
+.form-container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.form-images img {
+  max-width: 150px;
+  margin-bottom: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+}
+
+form label {
+  font-weight: bold;
+}
+
+form input {
+  padding: 0.5rem;
+  border: none;
+  border-bottom: 2px solid #003c3c;
+  background: transparent;
+}

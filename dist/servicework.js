@@ -4,9 +4,9 @@ const CACHE_NAME = 'pwaV1';
 // Archivos para el cacheo de la app se colocan en un array
 let urlCache = [
     '../',
-    '../css/styles.css',
-    '../js/scripts,js',
-    '../img/usuario.png'
+    './css/styles.css',
+    './js/scripts,js',
+    './img/usuario.png'
 ];
 
 // Instalar la app con el evento install y va a guardar en cache urlCache

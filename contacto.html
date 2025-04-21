@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendamiento de Citas - InkArt Studio</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Agendar una cita</h1>
+    <p>Selecciona el día y la hora para agendar tu cita.</p>
+  </header>
+
+  <section class="formulario">
+    <h2>Formulario de Agendamiento</h2>
+    <form id="form-agendar">
+      <label for="nombre">Nombre Completo:</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="fecha">Fecha:</label>
+      <input type="date" id="fecha" name="fecha" required>
+
+      <label for="hora">Hora:</label>
+      <input type="time" id="hora" name="hora" required>
+
+      <label for="mensaje">Mensaje (opcional):</label>
+      <textarea id="mensaje" name="mensaje"></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <!-- Botón para regresar al index -->
+  <section class="regresar">
+    <a href="index.html" class="btn-main">Regresar al inicio</a>
+  </section>
+
+  <footer>
+    <p>© 2025 InkArt Studio</p>
+  </footer>
+
+  <script src="js/agendar.js"></script>
+</body>
+</html>

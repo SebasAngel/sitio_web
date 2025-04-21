@@ -1,3 +1,10 @@
+/* -------------------------------
+   Estilos Globales
+-------------------------------- */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -5,99 +12,218 @@ body {
   color: #002c2c;
 }
 
-.header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;
+/* -------------------------------
+   Header
+-------------------------------- */
+header {
   background-color: #0a3a3a;
-  color: #fff;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
 }
 
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* -------------------------------
+   Logo para index.html
+-------------------------------- */
 .logo {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 1rem;
+  margin: 2rem auto 1rem;
 }
 
 .logo img {
-  width: 80px;
+  width: 60px;
+  max-width: 100%;
 }
 
-.logo p {
-  margin: 0.5rem 0 0;
-}
-
-.nav {
+/* -------------------------------
+   Sección principal (index.html)
+-------------------------------- */
+.main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 2rem 1rem;
+  text-align: center;
 }
 
 .menu {
   list-style: none;
   padding: 0;
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
+  gap: 1rem;
   align-items: center;
 }
 
 .menu li {
-  margin: 0.5rem 0;
+  width: 100%;
 }
 
-.menu a, .btn-main {
-  background-color: #e0f7f7;
-  border: none;
-  border-radius: 20px;
-  padding: 0.5rem 1rem;
-  color: #003c3c;
+.menu a {
   text-decoration: none;
+  background-color: #003c3c;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 20px;
   font-weight: bold;
+  transition: background-color 0.3s;
   display: inline-block;
+  width: 250px;
   text-align: center;
 }
 
+.menu a:hover {
+  background-color: #002020;
+}
+
+/* -------------------------------
+   Botón principal (si se usa)
+-------------------------------- */
 .btn-main {
   background-color: #003c3c;
   color: white;
-  margin-top: 1rem;
-  padding: 0.7rem 1.5rem;
-  font-size: 1.2rem;
+  padding: 0.8rem 1.6rem;
+  font-size: 1.1rem;
   cursor: pointer;
-  width: 80%;
+  border: none;
+  border-radius: 20px;
+  transition: background-color 0.3s;
+  display: inline-block;
+  margin-top: 1rem;
 }
 
+.btn-main:hover {
+  background-color: #002020;
+}
+
+/* -------------------------------
+   Sección de Formulario (contacto.html)
+-------------------------------- */
+.formulario {
+  padding: 2rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.formulario h2 {
+  background-color: #003c3c;
+  color: white;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+form label {
+  font-weight: bold;
+}
+
+form input,
+form textarea {
+  padding: 0.6rem;
+  border: none;
+  border-bottom: 2px solid #003c3c;
+  background-color: transparent;
+  font-size: 1rem;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+form button {
+  background-color: #003c3c;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #002020;
+}
+
+/* -------------------------------
+   Botón para regresar (contacto.html)
+-------------------------------- */
+.regresar {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* -------------------------------
+   Footer
+-------------------------------- */
 footer {
   text-align: center;
-  margin-top: 3rem;
   padding: 1rem;
   font-size: 0.9rem;
   color: #666;
+  margin-top: 3rem;
 }
 
+/* -------------------------------
+   Responsivo
+-------------------------------- */
 @media (max-width: 768px) {
-  .header {
-    padding: 1rem;
+  header h1 {
+    font-size: 1.6rem;
   }
 
-  .nav {
-    flex-direction: column;
+  .logo img {
+    width: 50px;
+  }
+
+  .formulario {
+    padding: 1.5rem;
+    width: 90%;
+  }
+
+  form input,
+  form textarea {
+    font-size: 1rem;
+  }
+
+  form button,
+  .btn-main,
+  .menu a {
     width: 100%;
+    font-size: 1rem;
+  }
+
+  .menu {
+    width: 100%;
+    padding: 0 1rem;
   }
 
   .menu li {
-    margin: 1rem 0;
-  }
-
-  .btn-main {
-    width: 80%;
-    margin-top: 1.5rem;
-  }
-
-  .menu a {
-    padding: 0.7rem 1.5rem;
-    font-size: 1.1rem;
+    width: 100%;
   }
 }

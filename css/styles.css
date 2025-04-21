@@ -1,16 +1,17 @@
-@media (max-width: 768px) {
-  .nav {
-    flex-direction: column; /* Colocar los elementos del menú en una columna */
-  }
-  .logo img {
-    width: 60px; /* Ajustar el tamaño del logo para pantallas más pequeñas */
-  }
-}
+
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     background-color: #d9f0f0;
     color: #002c2c;
+  }
+  @media (max-width: 768px) {
+    .nav {
+      flex-direction: column; /* Colocar los elementos del menú en una columna */
+    }
+    .logo img {
+      width: 60px; /* Ajustar el tamaño del logo para pantallas más pequeñas */
+    }
   }
   
   .header {
